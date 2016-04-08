@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="login_accound">手机号</string>
+    <string name="login_pwd_phone">验证码</string>
+    <string name="login_pwd_phone_get">获得验证码</string>
+    <string name="login_pwd_phone_hint">输入验证码</string>
+    <string name="login_pwd">密码</string>
+    <string name="login_pwd_two">确认密码</string>
+    <string name="login_username_hint">请输入手机号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_passwrod_two_hint">请输入确认密码</string>
+    <string name="register">注册</string>
+    <string name="login_nickname">昵称</string>
+    <string name="login_nickname_hint">请输入昵称</string>
+    <string name="login_sex">性别</string>
+    <string name="login_location">所在城市</string>
+    <string name="login_location_hint">请输入所在城市</string>
+</resources>
