@@ -67,7 +67,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/bt_log"
+        android:id="@+id/bt_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/chat_send_button_bg"
