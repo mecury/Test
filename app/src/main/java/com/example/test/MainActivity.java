@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.fragment.FujinFragment;
-import com.example.fragment.MainFragment;
-import com.example.fragment.PersonFragment;
+import com.example.test.fragment.FujinFragment;
+import com.example.test.fragment.MainFragment;
+import com.example.test.fragment.PersonFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

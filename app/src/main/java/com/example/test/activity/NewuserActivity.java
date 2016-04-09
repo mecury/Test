@@ -1,4 +1,4 @@
-package com.example.activity;
+package com.example.test.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.entity.MyUser;
+import com.example.test.entity.MyUser;
 import com.example.test.R;
 
 import butterknife.Bind;

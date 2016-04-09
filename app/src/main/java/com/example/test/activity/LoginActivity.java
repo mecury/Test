@@ -1,4 +1,4 @@
-package com.example.activity;
+package com.example.test.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,12 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.entity.MyUser;
+import com.example.test.entity.MyUser;
 import com.example.test.MainActivity;
 import com.example.test.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
@@ -49,13 +50,21 @@ public class LoginActivity extends Activity {
         context = LoginActivity.this;
         ButterKnife.bind(this);
 
+        MyUser userInfo = BmobUser.getCurrentUser(context, MyUser.class);
+        if (userInfo!=null){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("userphone",userInfo.getUsername());
+            startActivity(intent);
+            LoginActivity.this.finish();    //将当前activity销毁0.
+        }
+
         //登陆
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userphone = etUser.getText().toString();
                 password = etPassword.getText().toString();
-                if (checkUser()){
+                if (checkUser()) {
                     Bmoblogin();
                 }
             }
@@ -96,6 +105,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onSuccess() {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("userphone",userphone);
                 startActivity(intent);
                 LoginActivity.this.finish();    //将当前activity销毁
             }

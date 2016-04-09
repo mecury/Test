@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Smile.TextView._Black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/btn_login_n"
+        android:text="@string/aboutme"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textSize="19dp"
+        android:text="@string/about_log"
+        android:background="@color/theme_bg_color"/>
+    <Button
+        android:id="@+id/btn_about_sure"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/chat_send_button_bg"
+        android:gravity="center_vertical|center"
+        android:text="@string/about_bt_sure"/>
+</LinearLayout>

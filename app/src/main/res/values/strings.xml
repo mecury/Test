@@ -15,4 +15,10 @@
     <string name="login_sex">性别</string>
     <string name="login_location">所在城市</string>
     <string name="login_location_hint">请输入所在城市</string>
+    <string name="logout">退出登录</string>
+    <string name="aboutme">关于</string>
+    <string name="about_log">有什么建议或者意见，请联系778900559@qq.com</string>
+    <string name="about_bt_sure">确定</string>
+    <string name="main_queue">找人帮排队</string>
+    <string name="main_ticket">找人帮取票</string>
 </resources>

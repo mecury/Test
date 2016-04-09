@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.test.entity;
 
 import cn.bmob.v3.BmobUser;
 

@@ -8,4 +8,7 @@
 
     <!--emot-->
     <color name="transparent">#00000000</color>
+
+    <color name="theme_bg_color">#f0f2f5</color>
+    <color name="color_theme">#489cfa</color>
 </resources>
