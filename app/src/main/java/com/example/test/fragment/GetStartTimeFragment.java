@@ -90,7 +90,6 @@ public class GetStartTimeFragment extends DialogFragment{
                 Log.e("time",hourOfDay+":"+minute);
                 nHour = hourOfDay;
                 nMinute = minute;
-                Toast.makeText(getActivity(),  hourOfDay+":"+minute, Toast.LENGTH_SHORT).show();
             }
         });
 

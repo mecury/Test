@@ -6,11 +6,11 @@ import java.io.Serializable;
  * Created by 海飞 on 2016/4/10.
  */
 public class DateTime implements Serializable{
-    private int year;
-    private int month;
-    private int day;
-    private int hour;
-    private int minute;
+    private Integer year;
+    private Integer month;
+    private Integer day;
+    private Integer hour;
+    private Integer minute;
 
     public void setYear(int year) {
         this.year = year;

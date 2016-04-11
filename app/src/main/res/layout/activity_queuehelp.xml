@@ -41,6 +41,9 @@
                     android:gravity="center_vertical"
                     android:text="@string/queue_location"
                     android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/et_queue_location"
+                    style="@style/Register_Edit" />
             </LinearLayout>
 
             <LinearLayout
@@ -111,6 +114,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/et_queue_thing"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_marginBottom="5dp"

@@ -1,15 +1,17 @@
 package com.example.test.entity;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * Created by 海飞 on 2016/4/11.
  */
-public class HelpData {
+public class HelpData extends BmobObject{
     private String nickName;
     private String loction;
     private DateTime startTime;
     private DateTime endTime;
     private String things;
-    private String money;
+    private Integer money;
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
@@ -27,7 +29,7 @@ public class HelpData {
         this.things = things;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(int money) {
         this.money = money;
     }
 
@@ -47,7 +49,14 @@ public class HelpData {
         return startTime;
     }
 
-    public String getMoney() {
+    public int getMoney() {
         return money;
+    }
+
+    public DateTime getEndTime() {
+        return endTime;
+    }
+    public void setEndTime(DateTime endTime) {
+        this.endTime = endTime;
     }
 }
