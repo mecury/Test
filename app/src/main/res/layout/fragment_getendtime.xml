@@ -15,12 +15,14 @@
                 android:id="@+id/dp_EndTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:calendarViewShown="false"></DatePicker>
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"></DatePicker>
 
             <TimePicker
                 android:id="@+id/tp_EndTime"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TimePicker>
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"></TimePicker>
             <Button
                 android:id="@+id/btn_get_end_sure"
                 android:layout_width="match_parent"

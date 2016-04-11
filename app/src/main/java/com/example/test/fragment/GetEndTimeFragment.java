@@ -69,11 +69,10 @@ public class GetEndTimeFragment extends DialogFragment {
         dpEndTime.init(mYear, mMonth, mDay, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
                 boolean isTrue = dateChecked(year, monthOfYear, dayOfMonth);
                 if (isTrue) {
                     nYear = year;
-                    nMonth = monthOfYear;
+                    nMonth = monthOfYear+1;
                     nDay = dayOfMonth;
                 } else {
                     dismiss();
@@ -82,6 +81,7 @@ public class GetEndTimeFragment extends DialogFragment {
         });
 
         //时间改变的监听
+        tpEndTime.setIs24HourView(true);
         tpEndTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {

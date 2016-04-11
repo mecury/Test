@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ import butterknife.ButterKnife;
 /**
  * Created by 海飞 on 2016/4/10.
  */
-public class GetStartTimeFragment extends DialogFragment implements DatePicker.OnDateChangedListener{
+public class GetStartTimeFragment extends DialogFragment{
 
 
 
@@ -66,9 +67,23 @@ public class GetStartTimeFragment extends DialogFragment implements DatePicker.O
         mMinute = calendar.get(Calendar.MINUTE);
 
         //日期改变的监听
-        dpStartTime.init(mYear, mMonth, mDay, this);
+        dpStartTime.getCalendarView().setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Log.e("time",nYear + "," + nMonth + "," + nDay);
+                boolean isTrue = dateChecked(year, month, dayOfMonth);
+                if (isTrue) {
+                    nYear = year;
+                    nMonth = month+1;
+                    nDay = dayOfMonth;
+                } else {
+                    dismiss();
+                }
+            }
+        });
 
         //时间改变的监听
+        tpStartTime.setIs24HourView(true);
         tpStartTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
@@ -113,19 +128,6 @@ public class GetStartTimeFragment extends DialogFragment implements DatePicker.O
             return false;
         }
         return true;
-    }
-
-    @Override
-    public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        Log.e("time",nYear + "," + nMonth + "," + nDay);
-        boolean isTrue = dateChecked(year, monthOfYear, dayOfMonth);
-        if (isTrue) {
-            nYear = year;
-            nMonth = monthOfYear+1;
-            nDay = dayOfMonth;
-        } else {
-            dismiss();
-        }
     }
 
     @Override

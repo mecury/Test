@@ -91,8 +91,8 @@ public class queuehelpActivity extends Activity implements GetStartTimeFragment.
             @Override
             public void onClick(View v) {
                 //重用了获得开始时间的方法
-//                GetEndTimeFragment getEndTimeFragment = new GetEndTimeFragment();
-//                getEndTimeFragment.show(getFragmentManager(),"getEndTimeFragment");
+                GetEndTimeFragment getEndTimeFragment = new GetEndTimeFragment();
+                getEndTimeFragment.show(getFragmentManager(),"getEndTimeFragment");
             }
         });
         //确定按钮的点击事件
@@ -102,7 +102,21 @@ public class queuehelpActivity extends Activity implements GetStartTimeFragment.
 
             }
         });
+    }
 
+    //加载数据
+    public void data(){
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
