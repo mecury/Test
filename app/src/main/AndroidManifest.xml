@@ -28,6 +28,8 @@
             </intent-filter>
             </activity >
         <activity android:name=".activity.NewuserActivity"/>
+        <activity android:name=".activity.FatchActivity"/>
+        <activity android:name=".activity.queuehelpActivity"/>
     </application>
 
 </manifest>

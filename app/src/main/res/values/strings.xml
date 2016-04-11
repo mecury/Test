@@ -21,4 +21,11 @@
     <string name="about_bt_sure">确定</string>
     <string name="main_queue">找人帮排队</string>
     <string name="main_ticket">找人帮取票</string>
+    <string name="queue_location">地点</string>
+    <string name="queue_timeChoice">选择时间段：</string>
+    <string name="queue_time_start">选择开始时间</string>
+    <string name="queue_time_end">选择结束时间</string>
+    <string name="queue_thing">事件</string>
+    <string name="queue_pay">报酬</string>
+    <string name="queue_money">请输入金额</string>
 </resources>

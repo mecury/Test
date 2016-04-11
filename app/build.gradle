@@ -28,4 +28,6 @@ dependencies {
     //以下SDK开发者请根据需要自行选择
     //bmob-sdk ：Bmob的android sdk包
     compile 'cn.bmob.android:bmob-sdk:3.4.5'
+    //github上的datePicker开源项目导入
+    compile 'cn.aigestudio.datepicker:DatePicker:2.2.0'
 }
