@@ -74,7 +74,9 @@ public class PersonFragment extends Fragment {
                 BmobQuery.clearAllCachedResults(context);
                 MyUser userInfo = BmobUser.getCurrentUser(context, MyUser.class);
                 Intent intent1 = new Intent(getActivity(), LoginActivity.class);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent1);
+
             }
         });
         //关于按钮的点击

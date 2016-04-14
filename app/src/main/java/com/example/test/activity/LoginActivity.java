@@ -28,8 +28,6 @@ public class LoginActivity extends Activity {
 
     @Bind(R.id.et_user)
     EditText etUser;
-    @Bind(R.id.btn_clear)
-    Button btnClear;
     @Bind(R.id.et_password)
     EditText etPassword;
     @Bind(R.id.tv_fetchPass)
@@ -74,6 +72,15 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, NewuserActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //找回密码
+        tvFetchPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, FatchActivity.class);
                 startActivity(intent);
             }
         });

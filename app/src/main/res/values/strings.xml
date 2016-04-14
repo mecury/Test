@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test</string>
+    <string name="app_name">帮排派</string>
     <string name="login_accound">手机号</string>
     <string name="login_pwd_phone">验证码</string>
     <string name="login_pwd_phone_get">获得验证码</string>
@@ -28,4 +28,11 @@
     <string name="queue_thing">事件</string>
     <string name="queue_pay">报酬</string>
     <string name="queue_money">请输入金额</string>
+    <string name="fui_time">时间段</string>
+    <string name="fetch_phone">请输入注册时用的手机号</string>
+    <string name="fetch_verify_code">6位验证码</string>
+    <string name="fetch_send_code">发送验证码</string>
+    <string name="fetch_new_pwd">新密码</string>
+    <string name="fetch_new_pwd_hind">请输入新密码</string>
+    <string name="fetch_reset_pwd">重置密码</string>
 </resources>

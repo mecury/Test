@@ -4,10 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5.0px"
+        android:background="#ff005484" />
+
+    <ListView
+        android:id="@+id/lv_thinglist"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_gravity="center_horizontal"
-        android:text="second"/>
+        android:listSelector="@drawable/btn_selector">
+    </ListView>
 </LinearLayout>
