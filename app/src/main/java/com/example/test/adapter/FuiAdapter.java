@@ -73,7 +73,7 @@ public class FuiAdapter extends BaseAdapter {
         if (help.getMoney() == 0){
             viewHolder.tv_money.setText("自主协商");
         }else{
-            viewHolder.tv_money.setText(help.getMoney());
+            viewHolder.tv_money.setText(help.getMoney()+"");
         }
         BmobUser user = BmobUser.getCurrentUser(context);
         viewHolder.tvPhoneNumber.setText(user.getUsername());      //设置手机联系方式

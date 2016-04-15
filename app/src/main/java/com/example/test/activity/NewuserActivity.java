@@ -182,7 +182,7 @@ public class NewuserActivity extends Activity {
             Toast.makeText(NewuserActivity.this, "请正确输入手机号码", Toast.LENGTH_SHORT).show();
         } else {
             Log.e("Message", "2");
-            BmobSMS.requestSMSCode(this, userPhone, "短信模版", new RequestSMSCodeListener() {
+            BmobSMS.requestSMSCode(this, userPhone, "注册验证码", new RequestSMSCodeListener() {
                 @Override
                 public void done(Integer integer, BmobException e) {
                     if (e == null) {
