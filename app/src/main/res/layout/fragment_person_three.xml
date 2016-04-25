@@ -139,6 +139,15 @@
         android:background="#ff005484" />
 
     <Button
+        android:id="@+id/btn_revise"
+        android:background="@drawable/btn_login_n"
+        style="@style/Smile.TextView._White"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/revise"/>
+
+    <Button
         android:id="@+id/btn_logout"
         style="@style/Smile.Button.logout"
         android:layout_width="match_parent"

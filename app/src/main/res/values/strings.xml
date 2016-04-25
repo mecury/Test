@@ -35,4 +35,6 @@
     <string name="fetch_new_pwd">新密码</string>
     <string name="fetch_new_pwd_hind">请输入新密码</string>
     <string name="fetch_reset_pwd">重置密码</string>
+    <string name="revise">修改信息</string>
+    <string name="revise_sure">确定更改信息</string>
 </resources>

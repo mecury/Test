@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.test.R;
 import com.example.test.activity.LoginActivity;
+import com.example.test.activity.ResiveActivity;
 import com.example.test.entity.MyUser;
 
 import java.util.List;
@@ -42,6 +43,8 @@ public class PersonFragment extends Fragment {
     Button btnLogout;
     @Bind(R.id.btn_about)
     Button btnAbout;
+    @Bind(R.id.btn_revise)
+    Button btnRevise;
 
     private String userphone;   //注册的手机号
     private String nickname;    //昵称
@@ -59,12 +62,22 @@ public class PersonFragment extends Fragment {
         context = getActivity().getApplicationContext();
         user = new MyUser();
 
-        Intent intent = getActivity().getIntent();
+        final Intent intent = getActivity().getIntent();
         userphone = intent.getStringExtra("userphone");
 
         tvSetPhone.setText(userphone);
 
         initData();
+
+        //修改信息的按钮
+        btnRevise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getActivity(), ResiveActivity.class);
+                intent1.putExtra("userPhone", userphone);
+                startActivity(intent1);
+            }
+        });
 
         //注销登陆事件的点击
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +87,7 @@ public class PersonFragment extends Fragment {
                 BmobQuery.clearAllCachedResults(context);
                 MyUser userInfo = BmobUser.getCurrentUser(context, MyUser.class);
                 Intent intent1 = new Intent(getActivity(), LoginActivity.class);
-                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent1);
 
             }
@@ -84,11 +97,13 @@ public class PersonFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AboutDialogFragment aboutDialog = new AboutDialogFragment();
-                aboutDialog.show(getFragmentManager(),"aboutDialog");
+                aboutDialog.show(getFragmentManager(), "aboutDialog");
             }
         });
+
         return view;
     }
+
     /*
     当view视图被销毁的时候调用
      */
@@ -98,43 +113,25 @@ public class PersonFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    public void initData(){
+    @Override
+    public void onStart() {
+        super.onStart();
+        initData();
+    }
+
+    public void initData() {
         Log.e("text", "initData方法");
         BmobQuery<MyUser> query = new BmobQuery<MyUser>();
+        query.setCachePolicy(BmobQuery.CachePolicy.CACHE_ELSE_NETWORK);
 
-        //查询是否有缓存
-        boolean isInCache = query.hasCachedResult(context, MyUser.class);
-
-        if (isInCache){
-            query.findObjects(context, new FindListener<MyUser>() {
-                @Override
-                public void onSuccess(List<MyUser> list) {
-                    for (MyUser myUser : list ) {
-                        tvSetNickname.setText(myUser.getNickName());
-                        Log.e("nickName", myUser.getNickName());
-                        if (myUser.getSex()){
-                            tvSetSex.setText("男");
-                        } else {
-                            tvSetSex.setText("女");
-                        }
-                        tvSetLocation.setText(myUser.getLocation());
-                    }
-                }
-
-                @Override
-                public void onError(int i, String s) {
-                    Log.e("findOnError", "查找失败");
-                }
-            });
-        } else {
             query.addWhereEqualTo("username", userphone);
             query.findObjects(context, new FindListener<MyUser>() {
                 @Override
                 public void onSuccess(List<MyUser> list) {
-                    for (MyUser myUser : list ) {
+                    for (MyUser myUser : list) {
                         tvSetNickname.setText(myUser.getNickName());
                         Log.e("nickName", myUser.getNickName());
-                        if (myUser.getSex()){
+                        if (myUser.getSex()) {
                             tvSetSex.setText("男");
                         } else {
                             tvSetSex.setText("女");
@@ -148,7 +145,7 @@ public class PersonFragment extends Fragment {
                     Log.e("onError", "查询失败");
                 }
             });
-        }
+
 
     }
 }

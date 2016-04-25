@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.test.R;
 import com.example.test.adapter.FuiAdapter;
@@ -57,9 +56,11 @@ public class FujinFragment extends Fragment implements AdapterView.OnItemClickLi
         ButterKnife.unbind(this);
     }
 
+    //点击事件的处理
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(), "你点击了第" + position + "项", Toast.LENGTH_SHORT).show();
+
+
     }
 
     public void setList(int limit) {

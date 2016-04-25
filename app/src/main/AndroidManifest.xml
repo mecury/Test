@@ -30,6 +30,7 @@
         <activity android:name=".activity.NewuserActivity"/>
         <activity android:name=".activity.FatchActivity"/>
         <activity android:name=".activity.queuehelpActivity"/>
+        <activity android:name=".activity.ResiveActivity"/>
     </application>
 
 </manifest>
